@@ -132,10 +132,10 @@ elif st.session_state.page == "prediksi":
 
     def map_prediction(pred):
         return {
-            0: "🟢 Non Diabetes",
-            1: "🟡 Pre-Diabetes",
-            2: "🔴 Diabetes"
-        }.get(pred, "Tidak diketahui")
+            0: ("🟢 Non Diabetes", "nondiabetes.jpg"),
+            1: ("🟡 Pre-Diabetes", "prediabetes.jpg"),
+            2: ("🔴 Diabetes", "diabetes.jpg")
+        }.get(pred, ("Tidak diketahui", None))
 
     if st.button("🔎 Prediksi Sekarang"):
         try:
@@ -172,9 +172,24 @@ elif st.session_state.page == "prediksi":
                 rf_pred = rf_model.predict(scaled_input)[0]
                 dt_pred = dt_model.predict(scaled_input)[0]
 
-                st.subheader("📊 Hasil Prediksi")
-                st.write("🌲 Random Forest:", map_prediction(rf_pred))
-                st.write("🌳 Decision Tree:", map_prediction(dt_pred))
+                rf_text, rf_image = map_prediction(rf_pred)
+                dt_text, dt_image = map_prediction(dt_pred)
+
+                st.markdown("## 📊 Hasil Prediksi")
+
+                col1, col2 = st.columns(2)
+
+                with col1:
+                    st.markdown("#### 🌲 Random Forest")
+                    st.success(f"Anda terindikasi risiko: **{rf_text}**")
+                    if rf_image:
+                        st.image(rf_image, caption=rf_text, width=250)
+
+                with col2:
+                    st.markdown("#### 🌳 Decision Tree")
+                    st.success(f"Anda terindikasi risiko: **{dt_text}**")
+                    if dt_image:
+                        st.image(dt_image, caption=dt_text, width=250)
 
         except Exception as e:
             st.error(f"❌ Terjadi kesalahan: {e}")
