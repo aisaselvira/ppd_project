@@ -55,7 +55,7 @@ if st.session_state.page == "home":
     st.title("🔬 Selamat Datang di Aplikasi Prediabetix")
     st.markdown("## 🧪 Cek Risiko Diabetes Anda Secara Mudah dan Cepat")
 
-    st.image("hero.jpg", use_container_width=True)
+    st.image("hero.jpg", use_container_width=True, caption="Ilustrasi Pemeriksaan Diabetes")
 
     st.markdown("""
     <div style='text-align: justify; font-size:16px;'>
