@@ -51,11 +51,15 @@ if "page" not in st.session_state:
     st.session_state.page = "home"
 
 # Halaman HOME
+# Halaman HOME
 if st.session_state.page == "home":
     st.title("🔬 Selamat Datang di Aplikasi Prediabetix")
     st.markdown("## 🧪 Cek Risiko Diabetes Anda Secara Mudah dan Cepat")
 
-    st.image("hero.jpg", use_container_width=True, caption="Ilustrasi Pemeriksaan Diabetes")
+    try:
+        st.image("hero.jpg", use_container_width=True)
+    except Exception:
+        st.warning("📷 Gambar tidak dapat dimuat. Pastikan file 'hero_small.jpg' tersedia.")
 
     st.markdown("""
     <div style='text-align: justify; font-size:16px;'>
