@@ -52,14 +52,14 @@ if "page" not in st.session_state:
 
 # Halaman HOME
 if st.session_state.page == "home":
-    st.title("🔬 Selamat Datang di Aplikasi Prediabeta")
+    st.title("🔬 Selamat Datang di Aplikasi Prediabetix")
     st.markdown("## 🧪 Cek Risiko Diabetes Anda Secara Mudah dan Cepat")
 
-    st.image("hero.jpeg", use_container_width=True, caption="Ilustrasi Pemeriksaan Diabetes")
+    st.image("hero1.jpg", use_container_width=True, caption="Ilustrasi Pemeriksaan Diabetes")
 
     st.markdown("""
     <div style='text-align: justify; font-size:16px;'>
-        Aplikasi <b>Prediabeta</b> adalah alat bantu prediksi yang dirancang untuk membantu Anda
+        Aplikasi <b>Prediabetix</b> adalah alat bantu prediksi yang dirancang untuk membantu Anda
         mengenali potensi risiko diabetes berdasarkan indikator kesehatan pribadi seperti tekanan darah,
         kebiasaan merokok, aktivitas fisik, dan lainnya.
     </div>
