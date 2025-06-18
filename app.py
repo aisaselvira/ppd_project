@@ -123,8 +123,8 @@ elif st.session_state.page == "prediksi":
         "HvyAlcoholConsump": radio_q("Apakah Anda mengonsumsi alkohol berat?"),
         "AnyHealthcare": radio_q("Apakah Anda memiliki akses layanan kesehatan?"),
         "GenHlth": st.radio("Bagaimana kondisi kesehatan umum Anda?", list(genhlth_dict.keys()), index=None, horizontal=True),
-        "MentHlth": st.slider("Jumlah hari gangguan mental (0-30)", 0, 30, 0),
-        "PhysHlth": st.slider("Jumlah hari gangguan fisik (0-30)", 0, 30, 0),
+        "MentHlth": st.number_input("Berapa hari dalam 30 hari terakhir Anda merasa stres/masalah mental?", min_value=0, max_value=30, value=0),
+        "PhysHlth": st.number_input("Berapa hari dalam 30 hari terakhir Anda mengalami gangguan fisik (sakit/pusing, dsb)?", min_value=0, max_value=30, value=0),
         "DiffWalk": radio_q("Apakah Anda kesulitan berjalan?"),
         "Sex": st.radio("Jenis Kelamin", list(gender_dict.keys()), index=None, horizontal=True),
         "Age": st.number_input("Usia Anda", min_value=1, max_value=100, value=25)
