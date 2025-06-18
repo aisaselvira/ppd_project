@@ -59,7 +59,7 @@ if st.session_state.page == "home":
     try:
         st.image("hero.jpg", use_container_width=True)
     except Exception:
-        st.warning("📷 Gambar tidak dapat dimuat. Pastikan file 'hero_small.jpg' tersedia.")
+        st.warning("📷 Gambar tidak dapat dimuat. Pastikan file 'hero.jpg' tersedia.")
 
     st.markdown("""
     <div style='text-align: justify; font-size:16px;'>
