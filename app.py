@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Setup page
-st.set_page_config(page_title="Prediabeta", layout="wide")
+st.set_page_config(page_title="Prediabetix", layout="wide")
 
 # Custom style untuk sidebar
 st.markdown("""
