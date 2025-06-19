@@ -131,7 +131,7 @@ elif st.session_state.page == "prediksi":
         "PhysHlth": st.number_input("Berapa hari dalam 30 hari terakhir Anda mengalami gangguan fisik (sakit/pusing, dsb)?", min_value=0, max_value=30, value=0),
         "DiffWalk": radio_q("Apakah Anda kesulitan berjalan?"),
         "Sex": st.radio("Jenis Kelamin", list(gender_dict.keys()), index=None, horizontal=True),
-        "Age": st.number_input("Usia Anda", min_value=1, max_value=100, value=25)
+        "Age": st.number_input("Usia Anda", min_value=1, max_value=100, value=0)
     }
 
     def map_prediction(pred):
